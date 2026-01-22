@@ -17,29 +17,15 @@ This project builds a reproducible pipeline to compare **public charging supply*
 - Prioritise investment in local authorities with large privately owned BEV fleets but below-average plugs per BEV.
 - Improve **quality**, not just quantity: increase rapid/ultra-rapid share and develop multi-plug hubs in under-served areas.
 
-> Full methodology, limitations and detail are in `/docs/technical_report.pdf`.
+> Full methodology, limitations and detail are in `/docs/ev_charging_vs_demand_technical_report.pdf`.
 
 ## Data Sources
 - **OpenChargeMap (OCM)**: public charging sites and plugs (supply)
 - **DfT VEH9901**: privately kept BEV registrations by local authority (demand)
 - **ONS Postcode Directory (ONSPD)**: postcode → local authority mapping
 
-## Method (Pipeline)
-1. **Extract OCM** via API, build `sites` (1 row/site) and `plugs` (1 row/plug).
-2. **Clean + standardise postcodes** (`pcds_clean`) and join to ONSPD (`postcode_la`) for LAD mapping.
-3. Handle **unmatched postcodes** using a reverse-geocoding workflow (Google Maps API) and re-map where possible.
-4. Prepare **BEV demand** from VEH9901 to `veh9901_bev` (privately kept BEVs only).
-5. Create `la_supply_kpis` view combining demand + supply metrics:
-   - sites, plugs, plugs per 1,000 private BEVs
-   - accessibility/operator fields and power-band summaries (where available)
-6. Connect Tableau to PostgreSQL and publish dashboards for exploration.
-
 ## Repo Structure
 - `/sql/` schema, constraints, KPI views, QA queries
 - `/notebooks/` API extraction, postcode cleaning, reverse geocoding, forecasting
-- `/data/` processed inputs used to load PostgreSQL (raw data optional)
 - `/tableau/` Tableau packaged workbook + dashboard link
-- `/docs/` technical report + slides (PDF exports)
-- `/assets/` screenshots for quick viewing
-- `/outputs/` optional exported KPI samples
-
+- `/docs/` technical report + slides
