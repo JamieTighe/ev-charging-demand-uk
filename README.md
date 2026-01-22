@@ -6,6 +6,7 @@ This project builds a reproducible pipeline to compare **public charging supply*
 
 **Stack:** PostgreSQL (AWS RDS) + SQL + Python (Jupyter) + Tableau  
 **Key output:** `la_supply_kpis` view (one row per local authority)
+**Tableau dashboard:** <https://public.tableau.com/app/profile/jamie.tighe/viz/AreUKpublicchargerskeepingupwithEVdemand/Publicchargingcoveragevsprivately-ownedBEVsUKoverview>
 
 ## Key Findings
 - Great Britain has ~**586,972** privately owned BEVs and ~**62,302** public charge points, averaging ~**115** plugs per 1,000 private BEVs.  
