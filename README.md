@@ -5,7 +5,7 @@ Battery-electric vehicle (BEV) adoption is rising, but public charging provision
 This project builds a reproducible pipeline to compare **public charging supply** with **privately-owned BEV demand** at **local authority** level, producing KPI views in PostgreSQL and interactive Tableau dashboards.
 
 **Stack:** PostgreSQL (AWS RDS) + SQL + Python (Jupyter) + Tableau  
-**Key output:** `la_supply_kpis` view (one row per local authority)
+**Key output:** `la_supply_kpis` view (one row per local authority)  
 **Tableau dashboard:** <https://public.tableau.com/app/profile/jamie.tighe/viz/AreUKpublicchargerskeepingupwithEVdemand/Publicchargingcoveragevsprivately-ownedBEVsUKoverview>
 
 ## Key Findings
